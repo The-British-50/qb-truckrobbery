@@ -29,7 +29,7 @@ RegisterServerEvent('AttackTransport:akceptujto', function()
 
 				OdpalTimer()
 			else
-				TriggerClientEvent('QBCore:Notify', _source, 'Need at least '..ActivePolice.. ' SASP to activate the mission.')
+				TriggerClientEvent('QBCore:Notify', _source, 'Need at least '..ActivePolice.. ' Police to activate the mission.')
 			end
 		end
 	else
@@ -38,7 +38,7 @@ RegisterServerEvent('AttackTransport:akceptujto', function()
 end)
 
 RegisterServerEvent('qb-armoredtruckheist:server:callCops', function(streetLabel, coords)
-    TriggerClientEvent("qb-armoredtruckheist:client:robberyCall", -1, streetLabel, coords)
+    exports['ps-dispatch']:VanRobbery()
 end)
 
 function OdpalTimer()
@@ -59,8 +59,8 @@ RegisterServerEvent('AttackTransport:graczZrobilnapad', function()
 	local info = {
 		worth = math.random(cashA, cashB)
 	}
-	xPlayer.Functions.AddItem('markedbills', bags, false, info)
-	TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['markedbills'], "add")
+	xPlayer.Functions.AddItem('blackmoney', bags, false, info)
+	TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['blackmoney'], "add")
 
 	local chance = math.random(1, 100)
 	TriggerClientEvent('QBCore:Notify', _source, 'You took '..bags..' bags of cash from the van')
