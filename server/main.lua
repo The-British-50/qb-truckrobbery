@@ -55,7 +55,7 @@ end)
 RegisterServerEvent('AttackTransport:graczZrobilnapad', function()
 	local _source = source
 	local xPlayer = QBCore.Functions.GetPlayer(_source)
-	local bags = math.random(5,8)
+	local bags = math.random(1250,1750)
 	local info = {
 		worth = math.random(cashA, cashB)
 	}
