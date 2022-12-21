@@ -82,8 +82,8 @@ RegisterServerEvent('AttackTransport:graczZrobilnapad', function()
 	TriggerClientEvent('QBCore:Notify', _source, 'You took '..bags..' bags of dirty cash from the van')
 
 	if chance >= 95 then
-		xPlayer.Functions.AddItem('security_card_01', 1)
-		TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['security_card_01'], "add")
+		xPlayer.Functions.AddItem('robbery_usb_01', 1)
+		TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['robbery_usb_01'], "add")
 	end
 	Wait(2500)
 end)
