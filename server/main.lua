@@ -38,23 +38,7 @@ RegisterServerEvent('AttackTransport:akceptujto', function()
 end)
 
 RegisterServerEvent('qb-armoredtruckheist:server:callCops', function(streetLabel, coords)
-    TriggerServerEvent('cd_dispatch:AddNotification', {
-        job_table = {'police'}, 
-        coords = data.coords,
-        title = '10-35 - Truck Robbery',
-        message = 'A '..data.sex..' Armoured truck robbery in progress at '..data.street, 
-        flash = 0,
-        unique_id = tostring(math.random(0000000,9999999)),
-        blip = {
-            sprite = 431, 
-            scale = 1.2, 
-            colour = 3,
-            flashes = false, 
-            text = '999 - Truck Robbery',
-            time = (5*60*1000),
-            sound = 1,
-        }
-    })
+    TriggerClientEvent("qb-armoredtruckheist:client:robberyCall", -1, streetLabel, coords)
 end)
 
 function OdpalTimer()
