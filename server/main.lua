@@ -75,10 +75,10 @@ RegisterServerEvent('AttackTransport:graczZrobilnapad', function()
 	local info = {
 		worth = math.random(cashA, cashB)
 	}
-	xPlayer.Functions.AddItem('blackmoney', bags, false, info)
-	TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['blackmoney'], "add")
+	xPlayer.Functions.AddItem('markedbills', bags, false, info)
+	TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['markedbills'], "add")
 
-	local chance = math.random(1, 100)
+	local chance = math.random(1, 3)
 	TriggerClientEvent('QBCore:Notify', _source, 'You took '..bags..' bags of dirty cash from the van')
 
 	if chance >= 95 then
