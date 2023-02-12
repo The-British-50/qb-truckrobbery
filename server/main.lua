@@ -61,6 +61,7 @@ RegisterServerEvent('AttackTransport:graczZrobilnapad', function()
 	}
 	xPlayer.Functions.AddItem('markedbills', bags, false, info)
 	TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['markedbills'], "add")
+	TriggerClientEvent('ak4y-battlepass:addtaskcount:standart', source, 7, 1)
 
 	local chance = math.random(1, 3)
 	TriggerClientEvent('QBCore:Notify', _source, 'You took '..bags..' bags of dirty cash from the van')
