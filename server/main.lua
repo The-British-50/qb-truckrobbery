@@ -1,5 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local ActivePolice = 2  		--<< needed policemen to activate the mission
+local ActivePolice = 0  		--<< needed policemen to activate the mission
 local cashA = 1500 				--<<how much minimum you can get from a robbery
 local cashB = 2500				--<< how much maximum you can get from a robbery
 local ActivationCost = 500		--<< how much is the activation of the mission (clean from the bank)
@@ -61,6 +61,7 @@ RegisterServerEvent('AttackTransport:graczZrobilnapad', function()
 	}
 	xPlayer.Functions.AddItem('markedbills', bags, false, info)
 	TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['markedbills'], "add")
+	TriggerClientEvent('ak4y-battlepass:addtaskcount:standart', source, 7, 1)
 
 	local chance = math.random(1, 3)
 	TriggerClientEvent('QBCore:Notify', _source, 'You took '..bags..' bags of dirty cash from the van')
